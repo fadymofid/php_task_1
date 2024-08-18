@@ -1,0 +1,226 @@
+.section-title {
+    text-align: center;
+    padding: 30px 0;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.section-title h2 {
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.section-title span {
+    position: absolute;
+    top: 4px;
+    color: color-mix(in srgb, #5F687BFF, transparent 95%);
+    left: 0;
+    right: 0;
+    z-index: 1;
+    font-weight: 700;
+    font-size: 52px;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.section-title p {
+    margin-bottom: 0;
+    position: relative;
+    z-index: 2;
+}
+
+@media (max-width: 575px) {
+    .section-title h2 {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+
+    .section-title span {
+        font-size: 38px;
+    }
+}
+
+
+.hero {
+    width: 100%;
+    min-height: 70vh;
+    position: relative;
+    padding: 120px 0 60px 0;
+    display: flex;
+    align-items: center;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+}
+
+.hero p {
+    color: color-mix(in srgb, white, transparent 30%);
+    margin: 5px 0 30px 0;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.hero .btn-get-started {
+    color: white;
+    background: #10BC69FF;
+    font-family: SansSerif;
+    font-weight: 400;
+    font-size: 15px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 10px 28px 12px 28px;
+    border-radius: 50px;
+    transition: 0.5s;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+}
+
+.hero .btn-get-started:hover {
+    color: white;
+    background: color-mix(in srgb, #10BC69FF, transparent 15%);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+}
+
+.hero .btn-watch-video {
+    font-size: 16px;
+    transition: 0.5s;
+    margin-left: 25px;
+    color: white;
+    font-weight: 600;
+}
+
+.hero .btn-watch-video i {
+    color: #10BC69FF;
+    font-size: 32px;
+    transition: 0.3s;
+    line-height: 0;
+    margin-right: 8px;
+}
+
+.hero .btn-watch-video:hover {
+    color: #10BC69FF;
+}
+
+.hero .btn-watch-video:hover i {
+    color: color-mix(in srgb, #10BC69FF, transparent 15%);
+}
+
+.hero .animated {
+    animation: up-down 2s ease-in-out infinite alternate-reverse both;
+}
+
+@media (max-width: 640px) {
+    .hero h1 {
+        font-size: 28px;
+        line-height: 36px;
+    }
+
+    .hero p {
+        font-size: 18px;
+        line-height: 24px;
+        margin-bottom: 30px;
+    }
+
+    .hero .btn-get-started,
+    .hero .btn-watch-video {
+        font-size: 13px;
+    }
+}
+
+@keyframes up-down {
+    0% {
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+
+.featured-services {;
+    padding-top: 0;
+}
+
+.featured-services .service-item {
+    background-color: #eae8e8;
+    padding: 50px 30px;
+    transition: all ease-in-out 0.4s;
+    height: 100%;
+}
+
+.featured-services .service-item .icon {
+    margin-bottom: 10px;
+}
+
+.featured-services .service-item .icon i {
+    color: #10BC69FF;
+    font-size: 36px;
+    transition: 0.3s;
+}
+
+.featured-services .service-item h4 {
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.featured-services .service-item h4 a {
+    color: #5F687BFF;
+    transition: ease-in-out 0.3s;
+}
+
+.featured-services .service-item p {
+    line-height: 24px;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.featured-services .service-item:hover {
+    transform: translateY(-10px);
+}
+
+.featured-services .service-item:hover h4 a {
+    color: #10BC69FF;
+}
+
+
+.about .content h3 {
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+.about .content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about .content ul li {
+    padding: 10px 0 0 0;
+    display: flex;
+}
+
+.about .content ul i {
+    color: #10BC69FF;
+    margin-right: 0.5rem;
+    line-height: 1.2;
+    font-size: 1.25rem;
+}
+
+.about .content p:last-child {
+    margin-bottom: 0;
+}
+
+.about .pulsating-play-btn {
+    position: absolute;
+    left: calc(50% - 47px);
+    top: calc(50% - 47px);
+}
