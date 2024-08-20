@@ -11,3 +11,13 @@ function get_users($sortOrder = 'ASC') {
         return [];
     }
 }
+function search_users($searchTerm) {
+    $conn = connectToDB();
+    if ($conn) {
+        $stmt = $conn->prepare("SELECT * FROM user WHERE Name LIKE :searchTerm");
+        $stmt->execute(['searchTerm' => $searchTerm . '%']);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } else {
+        return [];
+    }
+}

@@ -1,21 +1,31 @@
 <?php
-
 include_once('../includes/header.php');
 include_once('../includes/db.php');
 include('../models/ProductModel.php');
 
-// Determine the sort order
-$sortOrder = isset($_GET['sort']) ? $_GET['sort'] : 'ASC';
 
-// Fetch the data with the selected sort order
-$data = get_products($sortOrder);
+$sortOrder = isset($_POST['sort']) ? $_POST['sort'] : 'ASC';
 
-// Display buttons for sorting
-echo '<div class="mb-3">';
-echo '<a href="?sort=ASC" class="btn btn-primary">Ascending</a> ';
-echo '<a href="?sort=DESC" class="btn btn-secondary">Descending</a>';
-echo '</div>';
+$searchTerm = isset($_POST['search']) ? $_POST['search'] : '';
 
+if ($searchTerm) {
+    $data = search_products($searchTerm);
+} else {
+    $data = get_products($sortOrder);
+}
+
+
+echo '<form method="POST" action="" class="mb-3">';
+echo '<input type="text" name="search" value="' . $searchTerm . '" placeholder="Search by name" class="form-control" style="width: 300px; display: inline-block; margin-right: 10px;">';
+echo '<button type="submit" class="btn btn-primary">Search</button>';
+echo '</form>';
+
+
+echo '<form method="POST" action="" class="mb-3">';
+echo '<input type="hidden" name="search" value="' . $searchTerm . '">'; // Maintain the search term if present
+echo '<button type="submit" name="sort" value="ASC" class="btn btn-primary">Ascending</button> ';
+echo '<button type="submit" name="sort" value="DESC" class="btn btn-secondary">Descending</button>';
+echo '</form>';
 
 if (!empty($data)) {
     echo '<table class="table table-striped">';
@@ -25,11 +35,8 @@ if (!empty($data)) {
     }
     echo '</tbody></table>';
 } else {
-    echo '<p>No users found</p>';
+    echo '<p>No products found</p>';
 }
 
 include('../includes/footer.php');
 ?>
-
-
-
